@@ -18,11 +18,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _formKey = GlobalKey<FormState>();
   String email = '', password = '', confirmPassword = '';
 
-  get usernameController => null;
-
-  get passwordController => null;
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController = TextEditingController();
 
   get signUserUp => null;
+
+  void signUserIn() {
+    // Add your authentication logic here
+    String username = usernameController.text;
+    String password = passwordController.text;
+    String confirmPassword = passwordController.text;
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +67,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                     MyTextfield(
                       controller: usernameController,
-                      hintText: 'Username',
+                      hintText: 'Username or Email',
                       obscureText: false,
                     ),
                     const SizedBox(height: 10),
@@ -72,8 +80,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     const SizedBox(height: 10),
 
                     MyTextfield(
-                      controller: passwordController,
-                      hintText: 'Password',
+                      controller: confirmPasswordController,
+                      hintText: 'Confirm Password',
                       obscureText: true,
                     ),
                     const SizedBox(height: 20),
