@@ -41,11 +41,8 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(height: 50),
-
                 const Icon(Icons.lock, size: 100),
-
                 const SizedBox(height: 50),
-
                 Text(
                   'Welcome back you\'ve been missed!',
                   style: TextStyle(color: Colors.grey[700], fontSize: 16),
